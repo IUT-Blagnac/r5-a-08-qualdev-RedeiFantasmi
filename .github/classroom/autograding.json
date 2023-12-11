@@ -1,9 +1,9 @@
 {
   "tests": [
     {
-      "name": "Run tests",
+      "name": "Run hello tests",
       "setup": "",
-      "run": "mvn test",
+      "run": "cd hellocucumber && mvn test",
       "input": "",
       "output": "",
       "comparison": "exact",
