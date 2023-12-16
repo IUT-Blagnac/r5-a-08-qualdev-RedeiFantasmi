@@ -120,10 +120,12 @@ const getLoginTime = () => {
   // énergie à recharger * le temps de rechargement d'une énergie
   const minutesDuration: number = staminaToReplinish * replinishRate;
 
-  const loginTime: Time = {
-    hour: currentTime.hour + Math.floor(minutesDuration / 60),
-    minutes: minutesDuration % 60,
-  }
+  // Récupération de l'heure avec l'ajout d'un zéro devant si seulement un chiffre (ex : 1 => 01)
+  const hour: string = (currentTime.hour + Math.floor(minutesDuration / 60)).toString().padStart(2, '0');
+  // Récupération des minutes avec l'ajout d'un zéro devant si seulement un chiffre (ex : 4 => 04)
+  const minutes: string = (minutesDuration % 60).toString().padStart(2, '0');
+
+  const loginTime: string = `${hour}:${minutes}`;
 
   return loginTime;
 
@@ -146,15 +148,12 @@ Given("it takes {int} minutes to replinish one stamina", function (gameReplinish
 });
 
 // L'utiliateur doit se connecter à {heure de format hh:mm}
-Then("user has to log in at {string}", function (expectedLoginTimeString: string) {
+Then("user has to log in at {string}", function (expectedLoginTime: string) {
 
-  // Object Time = temps de connexion réel
-  const loginTime = getLoginTime();
-  // Objet Time = temps de connexion prévu
-  const expectedLoginTime = getTimeFromString(expectedLoginTimeString);
+  // temps de connexion réel
+  const loginTime: string = getLoginTime();
 
   // Si les deux temps sont pareils tout va bien
-  assert.equal(loginTime.hour, expectedLoginTime.hour);
-  assert.equal(loginTime.minutes, expectedLoginTime.minutes);
+  assert.equal(loginTime, expectedLoginTime);
 
 });

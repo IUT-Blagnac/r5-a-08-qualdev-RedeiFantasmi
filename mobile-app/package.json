@@ -45,7 +45,8 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "html": {
-      "enabled": true
+      "enabled": true,
+      "output": "path/report.html"
     }
   }
 }

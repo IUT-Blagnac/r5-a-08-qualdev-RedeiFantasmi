@@ -189,10 +189,11 @@ let replinishRate = 0;
 const getLoginTime = () => {
   // énergie à recharger * le temps de rechargement d'une énergie
   const minutesDuration: number = staminaToReplinish * replinishRate;
-  const loginTime: Time = {
-    hour: currentTime.hour + Math.floor(minutesDuration / 60),
-    minutes: minutesDuration % 60,
-  }
+  // Récupération de l'heure avec l'ajout d'un zéro devant si seulement un chiffre (ex : 1 => 01)
+  const hour: string = (currentTime.hour + Math.floor(minutesDuration / 60)).toString().padStart(2, '0');
+  // Récupération des minutes avec l'ajout d'un zéro devant si seulement un chiffre (ex : 4 => 04)
+  const minutes: string = (minutesDuration % 60).toString().padStart(2, '0');
+  const loginTime: string = `${hour}:${minutes}`;
   return loginTime;
 }
 // L'énérgie de l'utilisateur est à {énergie actuelle} sur {énergie totale}
@@ -205,15 +206,20 @@ Given("it takes {int} minutes to replinish one stamina", function (gameReplinish
   replinishRate = gameReplinishRate;
 });
 // L'utiliateur doit se connecter à {heure de format hh:mm}
-Then("user has to log in at {string}", function (expectedLoginTimeString: string) {
-  // Object Time = temps de connexion réel
-  const loginTime = getLoginTime();
-  // Objet Time = temps de connexion prévu
-  const expectedLoginTime = getTimeFromString(expectedLoginTimeString);
+Then("user has to log in at {string}", function (expectedLoginTime: string) {
+  // temps de connexion réel
+  const loginTime: string = getLoginTime();
   // Si les deux temps sont pareils tout va bien
-  assert.equal(loginTime.hour, expectedLoginTime.hour);
-  assert.equal(loginTime.minutes, expectedLoginTime.minutes);
+  assert.equal(loginTime, expectedLoginTime);
 });
+
+.Résultat global de l'exécution des tests
+image::assets/tp3_global.png[width=80%]
+.Exemple détaillé scénario 1
+image::assets/tp3_exemple_scenario_1.png[width=80%]
+.Exemple détaillé scénario 2
+image::assets/tp3_exemple_scenario_2.png[width=80%]
+
 
 .Objectif
 L'objectif fixé à ce TP était de faire des tests pour des actions à réaliser pour des jeux mobiles. Ici j'ai retenu deux scénarios (mais j'aurai pu en faire d'autres) :
@@ -223,4 +229,25 @@ L'objectif fixé à ce TP était de faire des tests pour des actions à réalise
 
 == TP 4
 
+=== Rapport en txt
 
+.Rapport txt pour cucumber_demo
+[source, shell]
+---
+include::cucumber_demo/report.txt[]
+---
+
+=== Rapport en html
+
+.Rapport html pour hellocucumber
+image::assets/rapport_html_hellocucumber.png[]
+
+=== Rapport cukedoctor
+
+.Extrait rapport cukedoctor pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/tree/v4.0/cucumber_demo/target/cukedoctor/documentation.html[(appuyer ici pour voir le rapport complet)]
+image::assets/rapport_cukedoctor.png[]
+
+=== Rapport Serenity
+
+.Extrait rapport Serenity pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/tree/v4.0/assets/rapport_serenity/index.html[(appuyer ici pour voir le rapport complet)]
+image::assets/rapport_serenity.png[]
