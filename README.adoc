@@ -244,10 +244,10 @@ image::assets/rapport_html_hellocucumber.png[]
 
 === Rapport cukedoctor
 
-.Extrait rapport cukedoctor pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/tree/v4.0/cucumber_demo/target/cukedoctor/documentation.html[(appuyer ici pour voir le rapport complet)]
+.Extrait rapport cukedoctor pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/blob/v4.0/cucumber_demo/target/cukedoctor/documentation.html[(appuyer ici pour voir le rapport complet)]
 image::assets/rapport_cukedoctor.png[]
 
 === Rapport Serenity
 
-.Extrait rapport Serenity pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/tree/v4.0/assets/rapport_serenity/index.html[(appuyer ici pour voir le rapport complet)]
+.Extrait rapport Serenity pour cucumber_demo https://htmlpreview.github.io/?https://github.com/IUT-Blagnac/r5-a-08-qualdev-RedeiFantasmi/blob/v4.0/assets/rapport_serenity/index.html[(appuyer ici pour voir le rapport complet)]
 image::assets/rapport_serenity.png[]
