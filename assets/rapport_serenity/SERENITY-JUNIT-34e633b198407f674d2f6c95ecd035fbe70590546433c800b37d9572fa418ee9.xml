@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Cocktail Ordering" skipped="3" tests="7" time="0.62" timestamp="2023-12-16 05:44:46"><testcase name="Sending a message with an order"/><testcase name="Creating an empty order"/></testsuite>

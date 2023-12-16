@@ -1,0 +1,21 @@
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running cucumber_demo.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s -- in cucumber_demo.AppTest
+[INFO] Running dojo.RunCucumberTest
+5 Scenarios (5 passed)
+17 Steps (17 passed)
+0m0,049s
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.398 s -- in dojo.RunCucumberTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.932 s
+[INFO] Finished at: 2023-12-16T11:16:23+01:00
+[INFO] ------------------------------------------------------------------------

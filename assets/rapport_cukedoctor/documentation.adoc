@@ -1,0 +1,123 @@
+:toc: right
+:backend: html5
+:doctitle: Living Documentation
+:doctype: book
+:icons: font
+:!numbered:
+:sectanchors:
+:sectlink:
+:docinfo:
+:source-highlighter: highlightjs
+:toclevels: 3
+:hardbreaks:
+:chapter-label: Chapter
+:version-label: Version
+
+= *Living Documentation*
+
+== *Summary*
+[cols="12*^m", options="header,footer"]
+|===
+3+|Scenarios 7+|Steps 2+|Features: 1
+
+|[green]#*Passed*#
+|[red]#*Failed*#
+|Total
+|[green]#*Passed*#
+|[red]#*Failed*#
+|[purple]#*Skipped*#
+|[maroon]#*Pending*#
+|[yellow]#*Undefined*#
+|[blue]#*Missing*#
+|Total
+|Duration
+|Status
+
+12+^|*<<Cocktail-Ordering>>*
+|5
+|0
+|5
+|17
+|0
+|0
+|0
+|0
+|0
+|17
+|015ms
+|[green]#*passed*#
+12+^|*Totals*
+|5|0|5|17|0|0|0|0|0|17 2+|015ms
+|===
+
+== *Features*
+
+[[Cocktail-Ordering, Cocktail Ordering]]
+=== *Cocktail Ordering*
+
+ifndef::backend-pdf[]
+minmax::Cocktail-Ordering[]
+endif::[]
+****
+As Romeo, I want to offer a drink to Juliette so that we can discuss together (and maybe more).
+****
+
+==== Scenario: Creating an empty order
+
+==========
+Given ::
+Romeo who wants to buy a drink icon:thumbs-up[role="green",title="Passed"] [small right]#(001ms)#
+When ::
+an order is declared for Juliette icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+there is no cocktail in the order icon:thumbs-up[role="green",title="Passed"] [small right]#(002ms)#
+==========
+
+==== Scenario Outline: Creating an empty order
+
+==========
+Given ::
+"Romeo" who wants to buy a drink icon:thumbs-up[role="green",title="Passed"] [small right]#(002ms)#
+When ::
+an order is declared for "Juliette" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+there is 0 cocktails in the order icon:thumbs-up[role="green",title="Passed"] [small right]#(007ms)#
+==========
+
+==== Scenario Outline: Creating an empty order
+
+==========
+Given ::
+"Tom" who wants to buy a drink icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+an order is declared for "Jerry" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+there is 0 cocktails in the order icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: Sending a message with an order
+
+==========
+Given ::
+"Romeo" who wants to buy a drink icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+an order is declared for "Juliette" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+And ::
+a message saying "Wanna chat?" is added icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+the ticket must say "From Romeo to Juliette: Wanna chat?" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
+==== Scenario Outline: Sending a message with an order
+
+==========
+Given ::
+"Tom" who wants to buy a drink icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+When ::
+an order is declared for "Jerry" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+And ::
+a message saying "Hei!" is added icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+Then ::
+the ticket must say "From Tom to Jerry: Hei!" icon:thumbs-up[role="green",title="Passed"] [small right]#(000ms)#
+==========
+
